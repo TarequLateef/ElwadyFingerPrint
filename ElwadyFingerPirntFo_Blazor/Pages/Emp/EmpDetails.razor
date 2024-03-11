@@ -1,0 +1,82 @@
+﻿
+
+<div hidden="@(ShowDetails==false)" class="container-fluid">
+    <div class="row">
+        <div class="bg-info d-inline-flex">
+            <div class="col-1">
+                <div class="dropdown">
+                    <button class="btn btn-outline-dark" type="button" @onclick="ShowMenu" data-bs-toggle="dropdown">
+                        <span class="fas @(showMenu?"fa-ellipsis":"fa-ellipsis-v")"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><div role="button" class="dropdown-item">الادارة</div></li>
+                        <li><div role="button" class="dropdown-item">الوظيفة</div></li>
+                        <li><div role="button" class="dropdown-item">الاجازات</div></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-10 text-center">
+                <h3 >
+                    <strong >بيانات الموظف</strong>
+                </h3>
+            </div>
+            <div class="justify-content-end col-1">
+                <button type="button" class="btn btn-outline-danger" @onclick="HideDetails">
+                    <span class="fas fa-close"></span>
+                </button>
+
+            </div>
+        </div>
+        <div class="col-md-8">
+            <span class="input-group-text" id="lablName">اسم الموظف</span>
+            <label type="text" class="form-control">@(empItem is not null?empItem.EmpName:string.Empty)</label>
+        </div>
+        <div class="col-md-4">
+            <span class="input-group-text" for="lblCert">المؤهل</span>
+            <label type="text" class="form-control">
+                @(empItem is not null ? empItem.Cert is not null ? empItem.Cert.CertName:string.Empty :string.Empty)
+            </label>
+        </div>
+        <div class="col-md-4">
+            <span class="input-group-text" >الرقم القومي</span>
+            <label type="text" class="form-control">
+                @(empItem is not null? empItem.NationalNo:string.Empty)
+            </label>
+        </div>
+        <div class="col-md-4">
+            <span class="input-group-text">رقم التليفون</span>
+            <label type="text" class="form-control">
+                @(empItem is not null? empItem.Phone:string.Empty)
+            </label>
+        </div>
+        <div class="col-md-4">
+            <span class="input-group-text">الرقم التأميني</span>
+            <label type="text" class="form-control">
+                @(empItem is not null? empItem.InsuranceNo: string.Empty)
+            </label>
+        </div>
+        <div class="col-md-6">
+            <span class="input-group-text">حالة التأمين</span>
+            <label type="text" class="form-control">
+                @(empItem is not null? empItem.InsuranceStatus: string.Empty)
+            </label>
+        </div>
+        <div class="col-md-3">
+            <span class="input-group-text">تاريخ التأمين</span>
+            <label type="text" class="form-control">
+                @(empItem is not null? empItem.InsuranceDate.HasValue?empItem.InsuranceDate.Value.Date.ToString("yyyy-MM-dd"):string.Empty:string.Empty)
+            </label>
+        </div>
+        <div class="col-md-3">
+            <span class="input-group-text">انتهاء التأمين</span>
+            <label type="text" class="form-control">
+                @(empItem is not null? empItem.InsuranceEndDate.HasValue?
+                empItem.InsuranceEndDate.Value.Date.ToString("yyyy-MM-dd"):string.Empty:string.Empty)
+            </label>
+        </div>
+        <div class="row justify-content-center">
+            <button class="col-1 btn btn-success" type="button" @onclick="HideDetails">تم</button>
+        </div>
+
+    </div>
+</div>

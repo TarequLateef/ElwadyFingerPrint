@@ -1,0 +1,36 @@
+﻿<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+        <li class="page-item @(avalFirst?"":"disabled")">
+            <div role="button" @onclick="FirstGroup" class="page-link">
+                <span class="fa fa-angle-double-right"></span>
+            </div>
+        </li>
+        <li class="page-item @(avalPrev?"":"disabled")">
+            <div role="button" @onclick="PrevGroup" class="page-link">
+                <span class="fa fa-angle-right"></span>
+            </div>
+        </li>
+        @for (int index = firstPage; index<=groupEnd; index++)
+        {
+            string p = index.ToString();
+            <li class="page-item @(index>pagesCount?"disabled":"") 
+                @(Convert.ToInt16(p)==currPage?"active":"")">
+                <div role="button" @onclick="@(()=>
+                    {currPage=Convert.ToInt16(p);CurrPage.InvokeAsync(currPage);}
+                    )" class="page-link">
+                    @p
+                </div>
+            </li>
+        }
+        <li class="page-item @(avalNext?"":"disabled")">
+            <div role="button" class="page-link" @onclick="NextGroup">
+                <span class="fa fa-angle-left"></span>
+            </div>
+        </li>
+        <li class="page-item @(avalLast?"":"disabled")">
+            <div role="button" class="page-link" @onclick="LastGroup">
+                <span class="fa fa-angle-double-left"></span>
+            </div>
+        </li>
+    </ul>
+</nav>

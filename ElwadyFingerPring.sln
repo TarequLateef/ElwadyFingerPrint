@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34003.232
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElwadyFingerPring.API", "ElwadyFingerPring.API\ElwadyFingerPring.API.csproj", "{A000D2D9-AD65-4133-B088-9A1F649A139E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElwadyFingerPrint.EF", "ElwadyFingerPrint.EF\ElwadyFingerPrint.EF.csproj", "{38C19F72-3230-486C-892F-FF561F057800}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElwadyFingerPrint.Core", "ElwadyFingerPrint.Core\ElwadyFingerPrint.Core.csproj", "{A5A983D7-95EF-4B48-B810-554922888B66}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ElwadyFingerPirntFo_Blazor", "ElwadyFingerPirntFo_Blazor\ElwadyFingerPirntFo_Blazor.csproj", "{BC29EBEE-0BFE-44F5-AC40-EAD0D4F1D0CB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TarequComponets", "TarequComponets\TarequComponets.csproj", "{89DCF91A-4916-4528-8320-FCFF2F8EDC93}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A000D2D9-AD65-4133-B088-9A1F649A139E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A000D2D9-AD65-4133-B088-9A1F649A139E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A000D2D9-AD65-4133-B088-9A1F649A139E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A000D2D9-AD65-4133-B088-9A1F649A139E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{38C19F72-3230-486C-892F-FF561F057800}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{38C19F72-3230-486C-892F-FF561F057800}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{38C19F72-3230-486C-892F-FF561F057800}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{38C19F72-3230-486C-892F-FF561F057800}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A5A983D7-95EF-4B48-B810-554922888B66}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A5A983D7-95EF-4B48-B810-554922888B66}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A5A983D7-95EF-4B48-B810-554922888B66}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A5A983D7-95EF-4B48-B810-554922888B66}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC29EBEE-0BFE-44F5-AC40-EAD0D4F1D0CB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC29EBEE-0BFE-44F5-AC40-EAD0D4F1D0CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC29EBEE-0BFE-44F5-AC40-EAD0D4F1D0CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC29EBEE-0BFE-44F5-AC40-EAD0D4F1D0CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89DCF91A-4916-4528-8320-FCFF2F8EDC93}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89DCF91A-4916-4528-8320-FCFF2F8EDC93}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89DCF91A-4916-4528-8320-FCFF2F8EDC93}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89DCF91A-4916-4528-8320-FCFF2F8EDC93}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E40218B3-C33F-47E7-A497-F8B12586C6B1}
+	EndGlobalSection
+EndGlobal

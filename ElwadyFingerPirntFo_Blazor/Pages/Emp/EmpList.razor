@@ -1,0 +1,101 @@
+﻿@using ElwadyFingerPirntFo_Blazor.Pages.Emp
+
+@page "/EmployeesList"
+
+<PageTitle>قائمة الموظفين</PageTitle>
+   
+<div class="col">
+    <button hidden="@(shwEmpData==true)" type="button" class="btn @(newEmp?"btn-danger":"btn-primary")" @onclick="ShowNewComp">
+        @if(newEmp)
+        {
+            <span class="fas fa-window-close"></span>
+        }
+        else
+        {
+            <span class="fas fa-plus-circle"> موظف جديد </span>
+        }
+    </button>
+    <NewEmployee ShowComponent="@newEmp" NewItem="SetNewItem" ShowNewItem="AfterCreate"/>
+    <EmpDetails ShowDetails="@shwEmpData" empItem="@_eServ.item" RetToTable="SwithWindows"/>
+
+ <table class="table table-hover caption-top">
+    <caption class="row-cols-md-4"><strong>قائمة الموظفين</strong></caption>
+    <thead class="table-info">
+        <tr>
+            <th>صفحة (@currPage / @_eServ.pagesCount)</th>
+            <th>
+                <SearchDropDwon Title="الاسم" searching="searchName" FieldName="name" />
+            </th>
+            <th>
+                <SearchDropDwon Title="بداية العمل" searching="SearchWork" FieldName="startDate" />
+            </th>
+            <th>
+                <SearchDropDwon Title="العنوان" searching="SearchAddress" FieldName="address" />
+            </th>
+            <th>
+                <SearchDropDwon Title="الرقم التأميني" searching="SearchInsuranceNo" FieldName="insuranceNo" />
+            </th>
+            <th>
+                <SearchDropDwon Title="تاريخ التأمين" searching="SearchInsuranceDate" FieldName="insuranceDate" />
+            </th>
+        <th><SearchDropDwon Title="المؤهل" searching="SearchCert" FieldName="cert"/></th>
+        <th> @(_eServ.searching ? _eServ.searchList.Count() : _eServ.dumyList.Count())</th>
+            <th>
+            </th>
+        </tr>
+    </thead>
+    @if(_eServ.dataList==null || !_eServ.dataList.Any())
+    {
+        <div class="d-flex align-items-center" >
+            <div>
+                <strong role="status">تحميل ...</strong>
+                <div class="spinner-border ms-auto" aria-hidden="true"></div>
+            </div>
+     @*        <div>
+                <strong role="alert">ايقاف</strong>
+                <span class="fas fa-stop-circle btn-outline-danger" style="cursor:pointer;" @onclick="stopLoad"></span>
+            </div>
+    *@
+        </div>
+       }
+    else
+    {
+        <tbody>
+            @foreach (var item in _eServ.dataList)
+            {
+                <tr>
+                    <td>
+                        <BbtnDetails ItemID="@item.EmpID.ToString()" GetItemID="@GetEmpData"/>
+                    </td>
+                    <td>@item.EmpName</td>
+                    <td>@item.StartDate.ToString("yyyy-MM-dd")</td>
+                    <td>@item.Address</td>
+                    <td>@item.InsuranceNo</td>
+                    <td>
+                        @(item.InsuranceDate.HasValue?@item.InsuranceDate.Value.ToString("yyyy-MM-dd"):string.Empty)
+                    </td>
+                        <td> @(item.Cert is not null ? item.Cert.CertName:string.Empty)</td>
+                    <td>
+                        @if(item.Avaliable)
+                        {
+                            <span class="btn btn-outline-success fas fa-edit" title="تعديل"></span>
+                        }
+                        else
+                        {
+                            <span class="btn btn-outline-warning fas fa-sync" title="استعادة"></span>
+                        }    
+                    </td>
+                    <td>
+                        <span class="btn btn-outline-danger fas fa-trash-alt" title="حذف"></span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    }
+
+    </table>
+   
+    
+</div>
+<Pagination pagesCount="@_eServ.pagesCount" CurrPage="GotoPage"></Pagination>
+ 

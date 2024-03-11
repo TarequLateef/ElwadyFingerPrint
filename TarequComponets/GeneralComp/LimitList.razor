@@ -1,0 +1,12 @@
+﻿@page "/LimitList"
+
+<div class="input-group mb-3">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">@FieldCaption</button>
+    <ul class="dropdown-menu">
+        @foreach (var item in ItemList)
+        {
+            <li><div role="button" class="dropdown-item" @onclick="@(()=>{itemValue=@item;SelectValue.InvokeAsync(item);})">@item</div></li>
+        }
+    </ul>
+    <input type="text" class="form-control" @bind="@itemValue" aria-label="@FieldCaption" disabled>
+</div>
